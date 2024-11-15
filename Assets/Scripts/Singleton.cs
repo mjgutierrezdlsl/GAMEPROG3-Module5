@@ -54,6 +54,9 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
             }
         }
 
-        if (isPersistent) DontDestroyOnLoad(gameObject);
+        if (isPersistent)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

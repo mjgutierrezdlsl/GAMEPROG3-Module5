@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManager : Singleton<AudioManager>
 {
     [SerializeField] AudioSource _bgmSource;
+    [SerializeField] VolumeSettings _settings;
     [SerializeField] AudioData[] _tracks;
     private int _trackIndex = 0;
     public int TrackIndex

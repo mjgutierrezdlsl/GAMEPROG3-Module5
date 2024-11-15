@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : Singleton<AudioManager>
 {
     [SerializeField] AudioSource _bgmSource;
-    [SerializeField] VolumeSettings _settings;
+    [SerializeField] AudioMixer _mixer;
+    [SerializeField] VolumeSettings _volumeSettings;
     [SerializeField] AudioData[] _tracks;
     private int _trackIndex = 0;
     public int TrackIndex
@@ -27,6 +30,20 @@ public class AudioManager : Singleton<AudioManager>
             }
             PlayTrack(_trackIndex);
         }
+    }
+    private void OnEnable()
+    {
+        _volumeSettings.JsonLoaded += OnJsonLoaded;
+    }
+    private void OnDisable()
+    {
+        _volumeSettings.JsonLoaded -= OnJsonLoaded;
+    }
+
+    private void OnJsonLoaded(ConfigSettings settings)
+    {
+        var volumeSettings = settings as VolumeSettings;
+        _mixer.SetFloat("masterVolume", Mathf.Log10(volumeSettings.volume) * 20f);
     }
 
     private void Start()

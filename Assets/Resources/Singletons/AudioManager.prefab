@@ -175,7 +175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPersistent: 1
   _bgmSource: {fileID: 899523096233503153}
-  _settings: {fileID: 11400000, guid: c20065ba2cc376d448b5eb89c584c97e, type: 2}
+  _mixer: {fileID: 24100000, guid: 5cbc98e7b03fe2349971914a76580b69, type: 2}
+  _volumeSettings: {fileID: 11400000, guid: c20065ba2cc376d448b5eb89c584c97e, type: 2}
   _tracks:
   - {fileID: 11400000, guid: 2c5fcd7fd408d624db011a3c8cb6875d, type: 2}
   - {fileID: 11400000, guid: 8794db242e2e32a44a48ff1edaa442d5, type: 2}

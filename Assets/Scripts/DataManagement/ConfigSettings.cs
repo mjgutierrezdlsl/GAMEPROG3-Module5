@@ -45,14 +45,18 @@ public abstract class ConfigSettings : ScriptableObject
     /// <remarks>Omit .json from the fileName as it is included in the method</remarks>
     public void ReadFromJson(string path, string fileName)
     {
-        var json = File.ReadAllText($"{path}/{fileName}.json");
-        if (string.IsNullOrEmpty(json))
+        // use try-catch block to let the program continue
+        try
+        {
+            var json = File.ReadAllText($"{path}/{fileName}.json");
+            Debug.Log($"CONFIG LOADED:\n{json}");
+            FromJsonOverwrite(json);
+            JsonLoaded?.Invoke(this);
+        }
+        catch (System.Exception)
         {
             Debug.LogError($"{path}/{fileName}.json not found.");
             return;
         }
-        Debug.Log($"CONFIG LOADED:\n{json}");
-        FromJsonOverwrite(json);
-        JsonLoaded?.Invoke(this);
     }
 }

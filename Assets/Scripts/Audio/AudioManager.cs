@@ -52,8 +52,8 @@ public class AudioManager : Singleton<AudioManager>
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A)) { PlayPreviousTrack(); }
-        if (Input.GetKeyDown(KeyCode.D)) { PlayNextTrack(); }
+        // if (Input.GetKeyDown(KeyCode.A)) { PlayPreviousTrack(); }
+        // if (Input.GetKeyDown(KeyCode.D)) { PlayNextTrack(); }
     }
     public void PlayTrack(int index)
     {

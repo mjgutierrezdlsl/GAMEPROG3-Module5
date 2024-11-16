@@ -99,3 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPersistent: 1
   _playerSettings: {fileID: 11400000, guid: 97b696fbdb84a8844a3a8b9f52ae2566, type: 2}
+  _inventory:
+  - name: Gold
+    amount: 100
+  - name: Potion
+    amount: 5

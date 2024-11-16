@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : Singleton<Player>
 {
     [SerializeField] PlayerSettings _playerSettings;
+    public List<Item> _inventory = new();
     private float _moveSpeed;
     private void OnEnable()
     {
@@ -30,4 +31,11 @@ public class Player : Singleton<Player>
         var direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         transform.Translate(direction * _moveSpeed * Time.deltaTime);
     }
+}
+
+[Serializable]
+public class Item
+{
+    public string name;
+    public int amount;
 }

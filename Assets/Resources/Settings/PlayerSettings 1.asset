@@ -10,10 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 356bec3df3a9ebe45b2d2c9fb12822da, type: 3}
-  m_Name: PlayerSettings
+  m_Name: PlayerSettings 1
   m_EditorClassIdentifier: 
-  <MoveSpeed>k__BackingField: 5
-  <Inventory>k__BackingField:
-  - name: Gold
-    amount: 100
-  <Color>k__BackingField: {r: 1, g: 0.7122642, b: 0.7122642, a: 1}
+  <MoveSpeed>k__BackingField: 10
